@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nakao's Portfolio | Web Engineer</title>
+  <link rel="stylesheet" type="text/css" href="./assets/scss/style.css" />
+
+  <!-- Googleアイコン -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <!-- Micromodal -->
+  <script src="https://cdn.jsdelivr.net/npm/micromodal@0.4.10/dist/micromodal.min.js"></script>
+</head>
+<body>
+  <div class="index-wrapper">
+    <header class="header">
+      <a href="./index.html" class="header__logo-outer"><img src="./assets/images/logo.png" class="header__logo" alt="ロゴ画像"></a>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item"><a href="#id-about-me" class="header__nav-link">About me</a></li>
+          <li class="header__nav-item"><a href="#id-skill" class="header__nav-link">Skill</a></li> 
+          <li class="header__nav-item"><a href="#id-works" class="header__nav-link">Works</a></li>
+          <li class="header__nav-item"><a href="#id-profile" class="header__nav-link">Profile</a></li>
+        </ul>
+      </nav>
+
+      <button id="id-header__btn-hamburger" class="header__btn-hamburger" type="button" aria-controls="id-header__nav" aria-expanded=false aria-label="メニューを開く">
+        <span class="header__btn-bar"></span>
+      </button>
+      <nav id="id-header__hamburger-nav" class="header__hamburger-nav">
+        <div id="id-header__hamburger-overlay" class="header__hamburger-overlay"></div>
+        <ul id="id-header__hamburger-list" class="header__hamburger-list" aria-hidden="true">
+          <li class="header__hamburger-item"><a href="#id-about-me" class="header__nav-link">About me</a></li>
+          <li class="header__hamburger-item"><a href="#id-skill" class="header__nav-link">Skill</a></li> 
+          <li class="header__hamburger-item"><a href="#id-works" class="header__nav-link">Works</a></li>
+          <li class="header__hamburger-item"><a href="#id-profile" class="header__nav-link">Profile</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="first-view">
+      <h1 class="site-title">Nakao's Portfolio</h1>
+      <p class="site-sub-title">Web Engineer</p>
+      <div class="scroll-announce">
+        <!-- <p class="scroll-announce__text">Scroll<br>Down</p> -->
+        <span class="material-symbols-rounded">keyboard_double_arrow_down</span>
+      </div>
+      <div class="icon-container">
+        <img src="./assets/images/wheel_unit_pink.png" class="icon-container__icon icon-container__icon--pink icon-container__icon--move">
+        <img src="./assets/images/wheel_unit_green.png" class="icon-container__icon icon-container__icon--green icon-container__icon--move">
+        <img src="./assets/images/wheel_unit_yellow.png" class="icon-container__icon icon-container__icon--yellow icon-container__icon--move">
+      </div>
+    </section>
+
+    <section id="id-about-me" class="section about-me">
+      <h2 class="section__title">About me</h2>
+      <div class="about-me__container">
+        <img src="./assets/images/myself.png" style="width: 200px;">
+        <p class="about-me__text">はじめまして。平成4年生まれの<span id="myAge"></span>歳。Webエンジニア<span id="elapsedYears"></span>年目の中尾です。<br>
+          大学を卒業後造船会社に入社し、5年半設計業務に従事しました。<br>
+          その後、造船業界全体の先行きに不安を感じ、29歳で転職をしました。<br>
+          現在はwebエンジニアとして業務を担当しております。</p>
+      </div>
+    </section>
+
+    <section id="id-skill" class="section skill">
+      <h2 class="section__title">Skill</h2>
+      <p class="score-indicator__text">
+        職業訓練校でHTML/CSS、プログラミングスクールでPHPを中心にweb技術を学びました。
+        現在の主な業務は、要求定義から社内のデザイナーやプログラマーへのディレクションです。
+        また、オフショアの開発会社への開発依頼及び検収作業も行っております。
+      </p>
+      <p class="score-indicator__text c-mb-30">
+        社内向けのシステムなど、自身で開発をする機会もありますが、
+        社外向けや一般ユーザー向けの正式なサービスを自身で開発した経験がないため、
+        今後プライベートでもいいので、そのような経験を積んでいきたいと考えております。
+      </p>
+      <div class="skill__container">
+        <div class="skill__container-inner">
+          <div class="skill__container-item">
+            <canvas id="js-chart-frontend" class="chart chart-frontend"></canvas>
+          </div>
+          <div class="skill__container-item">
+            <canvas id="js-chart-backend" class="chart chart-backend"></canvas>
+          </div>
+          <div class="skill__container-item">
+            <canvas id="js-chart-other" class="chart chart-other"></canvas>
+          </div>
+        </div>
+        <div class="score-indicator">
+          <h3 class="score-indicator__title">スコア指標</h3>
+          <div class="score-indicator__container">
+            <p class="score-indicator__item">0 - 今後習得したい技術</p>
+            <p class="score-indicator__item">1 - 軽く触ったことがある、または学習中</p>
+            <p class="score-indicator__item">2 - 数ヶ月以上使用しているがもう少し習熟が必要</p>
+            <p class="score-indicator__item">3 - 実務で基本的な使用が可能</p>
+            <p class="score-indicator__item">4 - 応用的な使い方やカスタマイズが可能</p>
+            <p class="score-indicator__item">5 - プロフェッショナル</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="id-works" class="section works">
+      <h2 class="section__title">Works</h2>
+      <div class="works__container">
+        <div class="works__container-item" data-micromodal-trigger="id-modal-1" role="button">
+          <img src="./assets/images/works_molstan.png" class="works__container-image">
+          <p class="works__container-title">molstan</p>
+          <p class="works__container-subtitle">企業風ホームページ</p>
+        </div>
+        <div class="modal micromodal-slide" id="id-modal-1" aria-hidden="true">
+          <div class="modal__overlay" tabindex="-1">
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+              <header class="modal__header">
+                <p class="modal__title" id="id-modal-1-title">molstan</p>
+                <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+              </header>
+              <main class="modal__content" id="id-modal-1-content">
+                <div class="modal__content-left">
+                  <div class="modal__description">
+                    <p>Bootstrapのテンプレートを使用して、企業風のHPを作成しました。細かい見た目の部分を自分で調整し、企業のイメージやサービスの内容なども自分で考えてみました。</p>
+                    <p class="modal__description-note">※練習用に作成したサイトで、実在する企業ではありません。</p>
+                  </div>
+                  <div class="modal__prog-lang">
+                    <p class="modal__prog-lang-title">使用言語</p>
+                    <p class="modal__prog-lang-text">HTML/CSS, Bootstrap</p>
+                  </div>
+                </div>
+                <div class="modal__content-right">
+                  <div class="modal__link-container">
+                    <a class="modal__link" href="./works/molestam/index.html" target="_blank">
+                      <span>サイトはこちら</span>
+                      <span class="material-symbols-rounded">open_in_new</span>
+                    </a>
+                  </div>
+                  <div class="modal__image-container">
+                    <a class="modal__image-inner" href="./works/molestam/index.html" target="_blank">
+                      <img class="modal__image" src="./assets/images/works_molstan.png">
+                    </a>
+                  </div>
+                  <div class="modal__service">
+                    <a href="#" class="modal__service-github">
+                      <img src="./assets/images/github-mark.png" class="modal__service-github-image">
+                      <p class="modal__service-github-title">GitHub</p>
+                    </a>
+                  </div>
+                </div>
+              </main>
+              <!-- <footer class="modal__footer">
+                <button class="modal__btn modal__btn-primary">Continue</button>
+                <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+              </footer> -->
+            </div>
+          </div>
+        </div>
+        <div class="works__container-item" data-micromodal-trigger="id-modal-2" role="button">
+          <img src="./assets/images/works_orange.png" class="works__container-image">
+          <p class="works__container-title">orange</p>
+          <p class="works__container-subtitle">美容室風ホームページ</p>
+        </div>
+        <div class="modal micromodal-slide" id="id-modal-2" aria-hidden="true">
+          <div class="modal__overlay" tabindex="-1">
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-2-title">
+              <header class="modal__header">
+                <p class="modal__title" id="id-modal-2-title">orange</p>
+                <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+              </header>
+              <main class="modal__content" id="id-modal-2-content">
+                <div class="modal__content-left">
+                  <div class="modal__description">
+                    <p>WordPressを使用して、美容室風のHPを作成しました。テーマを1から作成しました。納品後にお客様が編集・管理できるようなものになっていないので、今後アップデートしてく予定です。</p>
+                    <p class="modal__description-note">※練習用に作成したサイトで、実在する美容室ではありません。</p>
+                  </div>
+                  <div class="modal__prog-lang">
+                    <p class="modal__prog-lang-title">使用言語</p>
+                    <p class="modal__prog-lang-text">HTML/CSS, jQuery, WordPress</p>
+                  </div>
+                </div>
+                <div class="modal__content-right">
+                  <div class="modal__link-container">
+                    <a class="modal__link" href="./works/orange/" target="_blank">
+                      <span>サイトはこちら</span>
+                      <span class="material-symbols-rounded">open_in_new</span>
+                    </a>
+                  </div>
+                  <div class="modal__image-container">
+                    <a class="modal__image-inner" href="./works/orange/" target="_blank">
+                      <img class="modal__image" src="./assets/images/works_orange.png">
+                    </a>
+                  </div>
+                  <div class="modal__service">
+                    <a href="#" class="modal__service-github">
+                      <img src="./assets/images/github-mark.png" class="modal__service-github-image">
+                      <p class="modal__service-github-title">GitHub</p>
+                    </a>
+                  </div>
+                </div>
+              </main>
+              <!-- <footer class="modal__footer">
+                <button class="modal__btn modal__btn-primary">Continue</button>
+                <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+              </footer> -->
+            </div>
+          </div>
+        </div>
+        <div class="works__container-item" data-micromodal-trigger="id-modal-3" role="button">
+          <img src="./assets/images/works_uploader.png" class="works__container-image">
+          <p class="works__container-title">File Uploader</p>
+          <p class="works__container-subtitle">ファイルアップローダー</p>
+        </div>
+        <div class="modal micromodal-slide" id="id-modal-3" aria-hidden="true">
+          <div class="modal__overlay" tabindex="-1">
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-3-title">
+              <header class="modal__header">
+                <p class="modal__title" id="id-modal-3-title">File Uploader</p>
+                <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+              </header>
+              <main class="modal__content" id="id-modal-3-content">
+                <div class="modal__content-left">
+                  <div class="modal__description">
+                    <p>ファイル共有用のファイルアップローダーを作成しました。ギガファイル便のようにファイルをアップロードするとダウンロードリンクが発行されます。</p>
+                    <p>アップロード部分は勉強のためにライブラリは使わず、素のJavaScriptとphpで実装しました。</p>
+                    <p>セキュリティの部分に疎かったので、ファイルの保存場所やアクセス権限の設定、ファイル拡張子の制限など良い勉強になりました。</p>
+                    <p class="modal__description-note">※練習用に作成したサイトで、公開はしておりません。</p>
+                  </div>
+                  <div class="modal__prog-lang">
+                    <p class="modal__prog-lang-title">使用言語</p>
+                    <p class="modal__prog-lang-text">HTML/CSS, SCSS, JavaScript, particles.js, php, mysql</p>
+                  </div>
+                </div>
+                <div class="modal__content-right">
+                  <div class="modal__link-container">
+                    <a class="modal__link" href="./works/uploader/" target="_blank">
+                      <span>サイトはこちら</span>
+                      <span class="material-symbols-rounded">open_in_new</span>
+                    </a>
+                  </div>
+                  <div class="modal__image-container">
+                    <a class="modal__image-inner" href="./works/uploader/" target="_blank">
+                      <img class="modal__image" src="./assets/images/works_uploader.png">
+                    </a>
+                  </div>
+                  <div class="modal__service">
+                    <a href="#" class="modal__service-github">
+                      <img src="./assets/images/github-mark.png" class="modal__service-github-image">
+                      <p class="modal__service-github-title">GitHub</p>
+                    </a>
+                  </div>
+                </div>
+              </main>
+              <!-- <footer class="modal__footer">
+                <button class="modal__btn modal__btn-primary">Continue</button>
+                <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+              </footer> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="id-profile" class="section profile">
+      <h2 id="id-profile-title" class="section__title">Profile</h2>
+      <div class="profile__container">
+        <div id="id-water-drop" class="water-drop">
+          <div id="id-drop-shaped"></div>
+          <div id="ripple1"></div>
+          <div id="ripple2"></div>
+          <div id="ripple3"></div>
+        </div>
+        <div id="id-profile__container-inner" class="profile__container-inner">
+          <table class="company">
+            <tbody>
+              <tr>
+                <th class="arrow_box">はじまり</th>
+                <td>1992年 大分県の田舎町で生まれました。</td>
+              </tr>
+              <tr>
+                <th class="arrow_box">学生時代</th>
+                <td>
+                  小学校：フットサル・野球・陸上とスポーツに夢中でした。<br>
+                  中学校：ソフトテニス部でキャプテンになり、チームで県ベスト4までいったのは良い思い出です。<br>
+                  高校：サッカー部で大学受験と両立しながら、高校生活を過ごしました。<br>
+                  大学：大分大学に入学し、機械工学を学びました。プライベートはパチンコに明け暮れていました。
+               </td>
+              </tr>
+              <tr>
+                <th>社会人</th>
+                <td>
+                  造船会社に入社。仕事もそうですが、社会人としての基礎を築いていただきました。会社や先輩には今でも感謝しかありません。
+                </td>
+              </tr>
+              <tr>
+                <th>転職</th>
+                <td>
+                  5年半勤めた造船会社を退社。<br>
+                  これまで仕事に対しては、自分のやりたいことや興味のあることというよりも、できる仕事ならなんでもいいという考え方でした。<br>
+                  しかし、30歳を目前にして自分の人生を見つめ直し、造船業界の先行きに不安を感じたという点もありますが、1度自分のやりたいことにチャレンジをしてみようと決意しました。<br>                  
+                  <br>
+                  なぜITの仕事を選んだのかというと、大学時代に簡単なプログラミングの授業を受けたことや、社会人になってからもプライベートでゲームの攻略サイトを作ろうと思い、軽くHTMLに触れた経験がありました。<br>
+                  当時は意識していませんでしたが、振り返ってみると、もともとITに対して少し興味があったのだと思います。<br>
+                  最終的な決め手は、「ITってなんとなくかっこいいし、これからニーズも高まりそう」という、正直少し軽い気持ちからでしたが、それでも自分の気持ちに素直になってみようと考えました。<br>
+                  <br>
+                  退職後は、独学で勉強をしながら、職業訓練とオンラインスクールに通ってプログラミングの勉強をしました。<br>
+                </td>
+              </tr>
+              <tr>
+                <th>現在</th>
+                <td>
+                  無事転職に成功し、現在はwebエンジニアとして業務を担当しております。
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2021–<span id="id-year"></span> Sho Nakao. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script src="./assets/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
+  <script>
+    /* ハンバーガーメニュー */
+    document.addEventListener("DOMContentLoaded", () => {
+      const btnHamburger = document.querySelector("#id-header__btn-hamburger");
+      const hamburgerMenu = document.querySelector("#id-header__hamburger-nav");
+      const hamburgerOverlay = document.querySelector("#id-header__hamburger-overlay");
+      const hamburgerList = document.querySelector("#id-header__hamburger-list");
+      const hamburgerItems = document.querySelectorAll(".header__hamburger-item");
+
+      let isMenuOpen = false; // メニューの状態を表す変数
+
+      const toggleMenu = () => {
+        isMenuOpen = !isMenuOpen; // メニューの状態を反転
+
+        // クラスのトグル操作
+        btnHamburger.classList.toggle("is-active", isMenuOpen); // 第二引数がtrueの時クラスを追加。falseの時クラスを削除。
+        hamburgerMenu.classList.toggle("is-active", isMenuOpen);
+        hamburgerOverlay.classList.toggle("is-active", isMenuOpen);
+        hamburgerList.classList.toggle("is-active", isMenuOpen);
+
+        // 属性操作
+        btnHamburger.setAttribute("aria-expanded", isMenuOpen.toString());  // 第一引数の属性名の値を第二引数でセットする。
+        btnHamburger.setAttribute("aria-label", isMenuOpen ? "メニューを閉じる" : "メニューを開く");
+        hamburgerList.setAttribute("aria-hidden", (!isMenuOpen).toString());
+        document.body.style.overflow = isMenuOpen ? "hidden" : "";
+      };
+
+      const handleKeydown = (e) => {
+        if (e.key === "Escape" && isMenuOpen) {
+          toggleMenu();
+        }
+      };
+
+      if(btnHamburger) {
+        btnHamburger.addEventListener("click", toggleMenu);
+      }
+      if(hamburgerItems) {
+        hamburgerItems.forEach((item) => {
+          item.addEventListener("click", toggleMenu);
+        });
+      }
+      document.addEventListener("keydown", handleKeydown);
+    });
+  </script>
+  <script>
+    /* profileアニメーション */
+    const scrollTarget = document.querySelector('#id-profile');  //ターゲット要素を取得
+    const waterDrop = document.querySelector('#id-water-drop');
+    const dropShaped = document.querySelector('#id-drop-shaped');
+    const ripple1 = document.querySelector('#ripple1');
+    const ripple2 = document.querySelector('#ripple2');
+    const ripple3 = document.querySelector('#ripple3');
+    const profileContainerInner = document.querySelector('#id-profile__container-inner');
+    let scrollOverFlag = false;
+
+    // スクロール
+    window.addEventListener('scroll', function() {
+      var scroll = window.scrollY; //スクロール量を取得
+      var windowHeight = window.innerHeight; //画面の高さを取得
+      var targetPos = scrollTarget.getBoundingClientRect().bottom + scroll; //ターゲット要素の位置を取得
+      if (!scrollOverFlag && scroll > targetPos - windowHeight) { //スクロール量 > ターゲット要素の位置
+        dropShaped.classList.add("drop-shaped");
+        ripple1.classList.add("ripple");
+        ripple2.classList.add("ripple", "delay1");
+        ripple3.classList.add("ripple", "delay2");
+
+        scrollOverFlag = true;
+      }
+    });
+
+    // 水アニメーション
+    dropShaped.addEventListener('animationend', () => {
+      dropShaped.style.display = 'none'; // アニメーション終了後に非表示にする
+    });
+
+    ripple3.addEventListener('animationend', () => {
+      waterDrop.style.display = 'none'; // アニメーション終了後に非表示にする
+      profileContainerInner.style.display = 'block'; // アニメーション終了後に表示する
+    });
+  </script>
+  <script>
+    /* skill chart */
+    const chartF = document.querySelector('#js-chart-frontend');
+    const chartB = document.querySelector('#js-chart-backend');
+    const chartO = document.querySelector('#js-chart-other');
+  
+    //　フロントエンド
+    const dataF = {
+      labels: [
+        'HTML/CSS',
+        'Javascript',
+        'JQuery',
+        'Vue.js',
+        'Bootstrap',
+        'Wordpress'
+      ],
+      datasets: [{
+        label: 'フロントエンド',
+        data: [3, 3, 2, 0, 1, 2],
+        fill: true,
+        backgroundColor: 'rgba(237, 116, 159, 0.2)',
+        borderColor: 'rgb(237, 116, 159)',
+        pointBackgroundColor: 'rgb(237, 116, 159)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgb(237, 116, 159)'
+      }]
+    };
+    new Chart(chartF, {
+      type: 'radar',
+      data: dataF,
+      options: {
+        elements: {
+          line: {
+            borderWidth: 1
+          }
+        },
+        scales: {
+          r: {
+              max: 5,
+              min: 0,
+              ticks: {
+                  stepSize: 1
+              }
+          }
+        },
+        maintainAspectRatio: false
+      },
+    });
+
+
+    //　バックエンド
+    const dataB = {
+      labels: [
+        'PHP',
+        'Laravel',
+        'MySQL',
+        'Node.js',
+        'Apache'
+      ],
+      datasets: [{
+        label: 'バックエンド',
+        data: [3, 1, 3, 0, 2],
+        fill: true,
+        backgroundColor: 'rgba(79, 207, 160, 0.2)',
+        borderColor: 'rgb(79, 207, 160)',
+        pointBackgroundColor: 'rgb(79, 207, 160)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgb(79, 207, 160)'
+      }]
+    };
+    new Chart(chartB, {
+      type: 'radar',
+      data: dataB,
+      options: {
+        elements: {
+          line: {
+            borderWidth: 1
+          }
+        },
+        scales: {
+          r: {
+              max: 5,
+              min: 0,
+              ticks: {
+                  stepSize: 1
+              }
+          }
+        },
+        maintainAspectRatio: false
+      },
+    });
+
+
+    //　その他
+    const dataO = {
+      labels: [
+        'Linux',
+        'Git/GitHub',
+        'Docker',
+        'AWS'
+      ],
+      datasets: [{
+        label: 'その他',
+        data: [2, 1, 1, 1],
+        fill: true,
+        backgroundColor: 'rgba(231, 231, 61, 0.2)',
+        borderColor: 'rgb(231, 231, 61)',
+        pointBackgroundColor: 'rgb(231, 231, 61)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgb(231, 231, 61)'
+      }]
+    };
+    new Chart(chartO, {
+      type: 'radar',
+      data: dataO,
+      options: {
+        elements: {
+          line: {
+            borderWidth: 1
+          }
+        },
+        scales: {
+          r: {
+              max: 5,
+              min: 0,
+              ticks: {
+                  stepSize: 1
+              }
+          }
+        },
+        maintainAspectRatio: false
+      },
+    });
+  </script>
+  <script>
+    /* Micromodal */
+    MicroModal.init({
+      disableScroll: true, // モーダルが開いている間に、背景スクロールを無効にする。 
+      disableFocus: true
+    });
+
+    // オーバーレイの要素に"data-micromodal-close"属性を付与してしまうと、
+    // 子要素のcontainerの余白をクリックしたときもモーダルが閉じてしまうのでその代替策
+    document.querySelectorAll(".modal__overlay").forEach(overlay => {
+      overlay.addEventListener("click", function(event) {
+        if (event.target === this) {
+          const closeButton = this.querySelector(".modal__close");  // ×ボタンの要素を取得
+          closeButton.click();  // ×ボタンをjsからクリック
+        }
+      });
+    });
+  </script>
+</body>
+</html>
