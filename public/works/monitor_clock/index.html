@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>モニター時計</title>
+
+    <!-- css読み込み -->
+    <link href="css/html5reset-1.6.1.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+    <!-- js読み込み -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    
+</head>
+<body onload="start()">
+    <div id="wrapper">
+        <h1 id="clock"></h1>
+        <video id="video1" src="./video/1.mp4" autoplay muted>
+        </video>
+    </div>
+
+    <script src="./video_total.js"></script>
+    <script>
+        // videoのループ処理
+        var video = document.getElementById("video1");
+        video.classList.add('video1');
+        video.addEventListener('animationend', () => {
+            // アニメーション終了後に実行する内容
+            video.classList.remove('video1');
+        })
+        let i = 1;
+        console.log(i, videoTotal);
+
+        video.addEventListener("ended", function() {
+            new Promise((resolve) => {
+                console.log("動画が終了しました");
+                i++;
+                resolve();
+            }).then(() => {
+                if(i <= videoTotal) {
+                    console.log(i);
+                    video.src = './video/' + i + '.mp4';
+                    video.classList.add('video1');
+                    video.addEventListener('animationend', () => {
+                        // アニメーション終了後に実行する内容
+                        video.classList.remove('video1');
+                    })
+                    console.log('次の動画');
+                } else {
+                    i = 1;
+                    console.log(i);
+                    video.src = './video/' + i + '.mp4';
+                    video.classList.add('video1');
+                    video.addEventListener('animationend', () => {
+                        // アニメーション終了後に実行する内容
+                        video.classList.remove('video1');
+                    })
+                    console.log('最初へ')
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // 時計
+        function updateClock() {
+            var now = new Date();
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+            if ( hour < 10 ) hour = "0" + hour;
+            if ( minute < 10 ) minute = "0" + minute;
+            if ( second < 10 ) second = "0" + second;
+            // 時：分：秒
+            // document.getElementById('clock').innerHTML = hour+":"+minute+":"+second;
+            // 時：分
+            document.getElementById('clock').innerHTML = hour + "<span id='colon'>:</span>"+minute;
+        }
+        function start() {
+            setInterval("updateClock();", 1000);
+            updateClock();
+        }
+
+        // コロン点滅
+        function Blinks(){
+        const COL_OBJ = document.getElementById('colon').style;
+        if ( COL_OBJ.visibility=='hidden' )
+            COL_OBJ.visibility = 'visible';
+        else COL_OBJ.visibility = 'hidden';
+        }
+        setInterval("Blinks()", 500);
+    </script>
+</body>
+</html>
