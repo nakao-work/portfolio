@@ -15,7 +15,7 @@ require_once './conf/const.php';
   <?php include './head.php'; ?>
 
   <!-- recaptcha読み込み -->
-  <script src="https://www.google.com/recaptcha/api.js?render=6Lct980qAAAAAMZRBecZfU14AcAg5_tgsmVNyQmR"></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=<?php echo RECAPTCHA_SITE_KEY; ?>"></script>
 </head>
 <body class="index-body">
   <!-- ****初期画面**** -->
