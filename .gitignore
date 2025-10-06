@@ -1,5 +1,7 @@
 .DS_Store
+.vscode
 memo.txt
+vendor/
 config/
 works_config/
 public/works/uploader/uploaded_file/

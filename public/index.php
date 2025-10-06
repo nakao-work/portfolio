@@ -1,3 +1,10 @@
+<?php
+
+// 設定ファイルを読み込み
+require_once '../config/const.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -14,11 +21,18 @@
   })(window,document,'script','dataLayer','GTM-WRKHGH8Z');</script>
   <!-- End Google Tag Manager -->
 
+  <!-- Google recaptcha -->
+  <script src="https://www.google.com/recaptcha/api.js?render=<?php echo RECAPTCHA_SITE_KEY; ?>"></script>
+
   <!-- Googleアイコン -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
 
   <!-- Micromodal -->
   <script src="https://cdn.jsdelivr.net/npm/micromodal@0.4.10/dist/micromodal.min.js"></script>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.23.0/dist/sweetalert2.all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.23.0/dist/sweetalert2.min.css" rel="stylesheet">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -28,7 +42,7 @@
 
   <div class="index-wrapper">
     <header class="header">
-      <a href="./index.html" class="header__logo-outer"><img src="./assets/images/logo.png" class="header__logo" alt="ロゴ画像"></a>
+      <a href="./index.php" class="header__logo-outer"><img src="./assets/images/logo.png" class="header__logo" alt="ロゴ画像"></a>
       <nav class="header__nav">
         <ul class="header__nav-list">
           <li class="header__nav-item"><a href="#id-about-me" class="header__nav-link">About me</a></li>
@@ -277,7 +291,7 @@
         </div>
         <div class="modal micromodal-slide" id="id-modal-4" aria-hidden="true">
           <div class="modal__overlay" tabindex="-1">
-            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-3-title">
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-4-title">
               <header class="modal__header">
                 <p class="modal__title" id="id-modal-4-title">モニター時計</p>
                 <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
@@ -387,6 +401,34 @@
       </div>
     </section>
 
+    <div class="contact" data-micromodal-trigger="id-modal-contact" role="button">
+      <p class="contact__title">お問い合わせ</p>
+    </div>
+    <div class="modal-contact micromodal-slide" id="id-modal-contact" aria-hidden="true">
+      <div class="modal-contact__container" role="dialog" aria-modal="true" aria-labelledby="modal-contact-title">
+        <header class="modal-contact__header">
+          <p class="modal-contact__title" id="id-modal-contact-title">お問い合わせ</p>
+          <button class="modal-contact__close" aria-label="Close modal" data-micromodal-close></button>
+        </header>
+        <main class="modal-contact__content" id="id-modal-contact-content">
+          <p>このサイトや私に何かコメントがありましたら、下記フォームよりご連絡ください。</p>
+          <form class="modal-contact__form">
+            <input type="text" placeholder="Name" name="name" class="modal-contact__name">
+            <input type="email" placeholder="Email" name="email" class="modal-contact__email">
+            <textarea placeholder="Message" name="message" class="modal-contact__message"></textarea>
+            <button type="submit" class="modal-contact__submit">送信</button>
+            <div class="modal-contact__recaptcha">
+              <p class="modal-contact__recaptcha-text">
+                This site is protected by reCAPTCHA and the Google
+                <a href="https://policies.google.com/privacy" class="modal-contact__recaptcha-link" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and
+                <a href="https://policies.google.com/terms" class="modal-contact__recaptcha-link" target="_blank" rel="noopener noreferrer">Terms of Service</a> apply.
+              </p>
+            </div>
+          </form>
+        </main>
+      </div>
+    </div>
+
     <footer class="footer">
       <p>&copy; 2021–<span id="id-year"></span> Sho Nakao. All rights reserved.</p>
     </footer>
@@ -438,42 +480,6 @@
         });
       }
       document.addEventListener("keydown", handleKeydown);
-    });
-  </script>
-  <script>
-    /* profileアニメーション */
-    const scrollTarget = document.querySelector('#id-profile');  //ターゲット要素を取得
-    const waterDrop = document.querySelector('#id-water-drop');
-    const dropShaped = document.querySelector('#id-drop-shaped');
-    const ripple1 = document.querySelector('#ripple1');
-    const ripple2 = document.querySelector('#ripple2');
-    const ripple3 = document.querySelector('#ripple3');
-    const profileContainerInner = document.querySelector('#id-profile__container-inner');
-    let scrollOverFlag = false;
-
-    // スクロール
-    window.addEventListener('scroll', function() {
-      var scroll = window.scrollY; //スクロール量を取得
-      var windowHeight = window.innerHeight; //画面の高さを取得
-      var targetPos = scrollTarget.getBoundingClientRect().bottom + scroll; //ターゲット要素の位置を取得
-      if (!scrollOverFlag && scroll > targetPos - windowHeight) { //スクロール量 > ターゲット要素の位置
-        dropShaped.classList.add("drop-shaped");
-        ripple1.classList.add("ripple");
-        ripple2.classList.add("ripple", "delay1");
-        ripple3.classList.add("ripple", "delay2");
-
-        scrollOverFlag = true;
-      }
-    });
-
-    // 水アニメーション
-    dropShaped.addEventListener('animationend', () => {
-      dropShaped.style.display = 'none'; // アニメーション終了後に非表示にする
-    });
-
-    ripple3.addEventListener('animationend', () => {
-      waterDrop.style.display = 'none'; // アニメーション終了後に非表示にする
-      profileContainerInner.style.display = 'block'; // アニメーション終了後に表示する
     });
   </script>
   <script>
@@ -612,13 +618,62 @@
         maintainAspectRatio: false
       },
     });
+  </script>  
+  <script>
+    /* profileアニメーション */
+    const scrollTarget = document.querySelector('#id-profile');  //ターゲット要素を取得
+    const waterDrop = document.querySelector('#id-water-drop');
+    const dropShaped = document.querySelector('#id-drop-shaped');
+    const ripple1 = document.querySelector('#ripple1');
+    const ripple2 = document.querySelector('#ripple2');
+    const ripple3 = document.querySelector('#ripple3');
+    const profileContainerInner = document.querySelector('#id-profile__container-inner');
+    let scrollOverFlag = false;
+
+    // スクロール
+    window.addEventListener('scroll', function() {
+      var scroll = window.scrollY; //スクロール量を取得
+      var windowHeight = window.innerHeight; //画面の高さを取得
+      var targetPos = scrollTarget.getBoundingClientRect().bottom + scroll; //ターゲット要素の位置を取得
+      if (!scrollOverFlag && scroll > targetPos - windowHeight) { //スクロール量 > ターゲット要素の位置
+        dropShaped.classList.add("drop-shaped");
+        ripple1.classList.add("ripple");
+        ripple2.classList.add("ripple", "delay1");
+        ripple3.classList.add("ripple", "delay2");
+
+        scrollOverFlag = true;
+      }
+    });
+
+    // 水アニメーション
+    dropShaped.addEventListener('animationend', () => {
+      dropShaped.style.display = 'none'; // アニメーション終了後に非表示にする
+    });
+
+    ripple3.addEventListener('animationend', () => {
+      waterDrop.style.display = 'none'; // アニメーション終了後に非表示にする
+      profileContainerInner.style.display = 'block'; // アニメーション終了後に表示する
+    });
   </script>
   <script>
     /* Micromodal */
     MicroModal.init({
       disableScroll: true, // モーダルが開いている間に、背景スクロールを無効にする。 
-      disableFocus: true
+      disableFocus: true,
+
+      // 問い合わせのモーダル展開時は背景スクロール許可
+      onShow: modal => {
+        if (modal.id === "id-modal-contact") {
+          document.body.style.overflow = "auto";   // 背景スクロール許可
+        } else {
+          document.body.style.overflow = "hidden"; // 背景スクロール禁止
+        }
+      },
+      onClose: modal => {
+        document.body.style.overflow = ""; // 元に戻す
+      }
     });
+    
 
     // オーバーレイの要素に"data-micromodal-close"属性を付与してしまうと、
     // 子要素のcontainerの余白をクリックしたときもモーダルが閉じてしまうのでその代替策
@@ -630,6 +685,68 @@
         }
       });
     });
+  </script>
+  <script>
+    /* お問い合わせ送信・reCAPTCHA */
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector('.modal-contact__form');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault(); // ページリロードを防ぐ
+
+        // recaptchaのトークンを取得
+        const recaptchaToken = await grecaptcha.execute("<?php echo RECAPTCHA_SITE_KEY ?>", { action: "submit" });
+
+        const formData = new FormData(form);
+        formData.append("recaptcha-response", recaptchaToken);
+
+        try {
+          const response = await fetch('../app/send_mail.php', {
+            method: 'POST',
+            body: formData
+          });
+
+          const data = await response.json();
+
+          if (data.status == "success") {
+            contactComplete("success", "送信が完了しました！");
+            form.reset(); // フォームをリセット
+          } else {
+            contactComplete('error', "送信に失敗しました。");
+            console.log(data.error);
+          }
+
+        } catch (error) {
+            contactComplete('error', "送信中にエラーが発生しました。");
+            console.log(error);
+        }
+      });
+    });
+  </script>
+  <script>
+    function contactComplete(status, message) {
+      Swal.fire({
+        title: `${status}`,
+        text: message,
+        icon: `${status}`,
+        customClass: {
+          container: 'success-alert',   // アラート全体のコンテナ
+          popup: 'success-alert__popup',           // ポップアップの部分
+          header: 'success-alert__header',         // ヘッダー部分
+          title: 'success-alert__title',           // タイトル
+          closeButton: 'success-alert__close',     // 閉じるボタン
+          icon: 'success-alert__icon',             // アイコン
+          image: 'success-alert__image',           // 画像
+          htmlContainer: 'success-alert__html-container', // HTMLコンテンツ
+          input: 'success-alert__input',           // 入力フォーム
+          actions: 'success-alert__actions',       // ボタン部分
+          confirmButton: 'success-alert__confirm', // 確定ボタン
+          cancelButton: 'success-alert__cancel',   // キャンセルボタン
+          footer: 'success-alert__footer',         // フッター
+        }
+        // customClass: 'success-alert',
+      });
+    }
   </script>
 </body>
 </html>
