@@ -701,7 +701,7 @@ require_once '../config/const.php';
         formData.append("recaptcha-response", recaptchaToken);
 
         try {
-          const response = await fetch('../app/send_mail.php', {
+          const response = await fetch("<?php echo SEND_MAIL_ENDPOINT ?>", {
             method: 'POST',
             body: formData
           });
