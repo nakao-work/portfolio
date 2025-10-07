@@ -1195,6 +1195,11 @@ html {
   font-size: 5rem;
   text-align: center;
 }
+.index-wrapper .section__text {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto 20px;
+}
 .index-wrapper .about-me__container {
   display: flex;
   flex-wrap: wrap;

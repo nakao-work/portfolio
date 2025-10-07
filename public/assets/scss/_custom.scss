@@ -516,6 +516,11 @@ html {
       font-size: 5.0rem;
       text-align: center;
     }
+    &__text {
+      width: 80%;
+      text-align: center;
+      margin: 0 auto 20px
+    }
   }
   .about-me {
     &__container {

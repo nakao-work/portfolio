@@ -131,6 +131,7 @@ require_once '../config/const.php';
 
     <section id="id-works" class="section works">
       <h2 class="section__title">Works</h2>
+      <p class="section__text">すべての作品は練習用に作成したものであり、公開はされておりません。</p>
       <div class="works__container">
         <div class="works__container-item" data-micromodal-trigger="id-modal-1" role="button">
           <img src="./assets/images/works_molstan.png" class="works__container-image">
