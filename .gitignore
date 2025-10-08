@@ -3,5 +3,7 @@
 memo.txt
 vendor/
 config/
+database/
 works_config/
+public/phpliteadmin.php
 public/works/uploader/uploaded_file/
