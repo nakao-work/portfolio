@@ -4,6 +4,5 @@ memo.txt
 vendor/
 config/
 database/
-works_config/
 public/phpliteadmin.php
-public/works/uploader/uploaded_file/
+public/practice/uploader/uploaded_file/
