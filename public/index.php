@@ -48,6 +48,7 @@ require_once '../config/const.php';
           <li class="header__nav-item"><a href="#id-about-me" class="header__nav-link">About me</a></li>
           <li class="header__nav-item"><a href="#id-skill" class="header__nav-link">Skill</a></li> 
           <li class="header__nav-item"><a href="#id-works" class="header__nav-link">Works</a></li>
+          <li class="header__nav-item"><a href="#id-practice" class="header__nav-link">Practice</a></li>
           <li class="header__nav-item"><a href="#id-profile" class="header__nav-link">Profile</a></li>
         </ul>
       </nav>
@@ -61,6 +62,7 @@ require_once '../config/const.php';
           <li class="header__hamburger-item"><a href="#id-about-me" class="header__nav-link">About me</a></li>
           <li class="header__hamburger-item"><a href="#id-skill" class="header__nav-link">Skill</a></li> 
           <li class="header__hamburger-item"><a href="#id-works" class="header__nav-link">Works</a></li>
+          <li class="header__hamburger-item"><a href="#id-practice" class="header__nav-link">Practice</a></li>
           <li class="header__hamburger-item"><a href="#id-profile" class="header__nav-link">Profile</a></li>
         </ul>
       </nav>
@@ -131,180 +133,27 @@ require_once '../config/const.php';
 
     <section id="id-works" class="section works">
       <h2 class="section__title">Works</h2>
-      <p class="section__text">すべての作品は練習用に作成したものであり、公開はされておりません。</p>
+      <p class="section__text">これまでに制作した作品を紹介しています。</p>
       <div class="works__container">
         <div class="works__container-item" data-micromodal-trigger="id-modal-1" role="button">
-          <img src="./assets/images/works_molstan.png" class="works__container-image">
-          <p class="works__container-title">molstan</p>
-          <p class="works__container-subtitle">企業風ホームページ</p>
+          <img src="./assets/images/works_monitor_clock.png" class="works__container-image">
+          <p class="works__container-title">モニター時計</p>
+          <p class="works__container-subtitle">展示用モニター時計</p>
         </div>
         <div class="modal micromodal-slide" id="id-modal-1" aria-hidden="true">
           <div class="modal__overlay" tabindex="-1">
             <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
               <header class="modal__header">
-                <p class="modal__title" id="id-modal-1-title">molstan</p>
+                <p class="modal__title" id="id-modal-1-title">モニター時計</p>
                 <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
               </header>
               <main class="modal__content" id="id-modal-1-content">
                 <div class="modal__content-left">
                   <div class="modal__description">
-                    <p>Bootstrapのテンプレートを使用して、企業風のHPを作成しました。細かい見た目の部分を自分で調整し、企業のイメージやサービスの内容なども自分で考えてみました。</p>
-                    <p class="modal__description-note">※練習用に作成したサイトで、実在する企業ではありません。</p>
-                  </div>
-                  <div class="modal__prog-lang">
-                    <p class="modal__prog-lang-title">使用言語</p>
-                    <p class="modal__prog-lang-text">HTML/CSS, Bootstrap</p>
-                  </div>
-                </div>
-                <div class="modal__content-right">
-                  <div class="modal__link-container">
-                    <a class="modal__link" href="./works/molestam/index.html" target="_blank">
-                      <span>サイトはこちら</span>
-                      <span class="material-symbols-rounded">open_in_new</span>
-                    </a>
-                  </div>
-                  <div class="modal__image-container">
-                    <a class="modal__image-inner" href="./works/molestam/index.html" target="_blank">
-                      <img class="modal__image" src="./assets/images/works_molstan.png">
-                    </a>
-                  </div>
-                  <div class="modal__service">
-                    <a href="https://github.com/nakao-work/portfolio/tree/main/public/works/molestam" class="modal__service-github" target="_blank">
-                      <img src="./assets/images/github-mark.png" class="modal__service-github-image">
-                      <p class="modal__service-github-title">GitHub</p>
-                    </a>
-                  </div>
-                </div>
-              </main>
-              <!-- <footer class="modal__footer">
-                <button class="modal__btn modal__btn-primary">Continue</button>
-                <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
-              </footer> -->
-            </div>
-          </div>
-        </div>
-        <div class="works__container-item" data-micromodal-trigger="id-modal-2" role="button">
-          <img src="./assets/images/works_orange.png" class="works__container-image">
-          <p class="works__container-title">orange</p>
-          <p class="works__container-subtitle">美容室風ホームページ</p>
-        </div>
-        <div class="modal micromodal-slide" id="id-modal-2" aria-hidden="true">
-          <div class="modal__overlay" tabindex="-1">
-            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-2-title">
-              <header class="modal__header">
-                <p class="modal__title" id="id-modal-2-title">orange</p>
-                <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
-              </header>
-              <main class="modal__content" id="id-modal-2-content">
-                <div class="modal__content-left">
-                  <div class="modal__description">
-                    <p>WordPressを使用して、美容室風のHPを作成しました。テーマを1から作成しました。納品後にお客様が編集・管理できるようなものになっていないので、今後アップデートしてく予定です。</p>
-                    <p class="modal__description-note">※練習用に作成したサイトで、実在する美容室ではありません。</p>
-                  </div>
-                  <div class="modal__prog-lang">
-                    <p class="modal__prog-lang-title">使用言語</p>
-                    <p class="modal__prog-lang-text">HTML/CSS, jQuery, WordPress</p>
-                  </div>
-                </div>
-                <div class="modal__content-right">
-                  <div class="modal__link-container">
-                    <a class="modal__link" href="./works/orange/" target="_blank">
-                      <span>サイトはこちら</span>
-                      <span class="material-symbols-rounded">open_in_new</span>
-                    </a>
-                  </div>
-                  <div class="modal__image-container">
-                    <a class="modal__image-inner" href="./works/orange/" target="_blank">
-                      <img class="modal__image" src="./assets/images/works_orange.png">
-                    </a>
-                  </div>
-                  <div class="modal__service">
-                    <a href="https://github.com/nakao-work/portfolio/tree/main/public/works/orange" class="modal__service-github" target="_blank">
-                      <img src="./assets/images/github-mark.png" class="modal__service-github-image">
-                      <p class="modal__service-github-title">GitHub</p>
-                    </a>
-                  </div>
-                </div>
-              </main>
-              <!-- <footer class="modal__footer">
-                <button class="modal__btn modal__btn-primary">Continue</button>
-                <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
-              </footer> -->
-            </div>
-          </div>
-        </div>
-        <div class="works__container-item" data-micromodal-trigger="id-modal-3" role="button">
-          <img src="./assets/images/works_uploader.png" class="works__container-image">
-          <p class="works__container-title">File Uploader</p>
-          <p class="works__container-subtitle">ファイルアップローダー</p>
-        </div>
-        <div class="modal micromodal-slide" id="id-modal-3" aria-hidden="true">
-          <div class="modal__overlay" tabindex="-1">
-            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-3-title">
-              <header class="modal__header">
-                <p class="modal__title" id="id-modal-3-title">File Uploader</p>
-                <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
-              </header>
-              <main class="modal__content" id="id-modal-3-content">
-                <div class="modal__content-left">
-                  <div class="modal__description">
-                    <p>ファイル共有用のファイルアップローダーを作成しました。ギガファイル便のようにファイルをアップロードするとダウンロードリンクが発行されます。</p>
-                    <p>アップロード部分は勉強のためにライブラリは使わず、素のJavaScriptとphpで実装しました。</p>
-                    <p>セキュリティの部分に疎かったので、ファイルの保存場所やアクセス権限の設定、ファイル拡張子の制限など良い勉強になりました。</p>
-                    <p class="modal__description-note">※練習用に作成したサイトで、公開はしておりません。</p>
-                  </div>
-                  <div class="modal__prog-lang">
-                    <p class="modal__prog-lang-title">使用言語</p>
-                    <p class="modal__prog-lang-text">HTML/CSS, SCSS, JavaScript, particles.js, php, mysql</p>
-                  </div>
-                </div>
-                <div class="modal__content-right">
-                  <div class="modal__link-container">
-                    <a class="modal__link" href="./works/uploader/" target="_blank">
-                      <span>サイトはこちら</span>
-                      <span class="material-symbols-rounded">open_in_new</span>
-                    </a>
-                  </div>
-                  <div class="modal__image-container">
-                    <a class="modal__image-inner" href="./works/uploader/" target="_blank">
-                      <img class="modal__image" src="./assets/images/works_uploader.png">
-                    </a>
-                  </div>
-                  <div class="modal__service">
-                    <a href="https://github.com/nakao-work/portfolio/tree/main/public/works/uploader" class="modal__service-github" target="_blank">
-                      <img src="./assets/images/github-mark.png" class="modal__service-github-image">
-                      <p class="modal__service-github-title">GitHub</p>
-                    </a>
-                  </div>
-                </div>
-              </main>
-              <!-- <footer class="modal__footer">
-                <button class="modal__btn modal__btn-primary">Continue</button>
-                <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
-              </footer> -->
-            </div>
-          </div>
-        </div>
-        <div class="works__container-item" data-micromodal-trigger="id-modal-4" role="button">
-          <img src="./assets/images/works_monitor_clock.png" class="works__container-image">
-          <p class="works__container-title">モニター時計</p>
-          <p class="works__container-subtitle">展示用モニター時計</p>
-        </div>
-        <div class="modal micromodal-slide" id="id-modal-4" aria-hidden="true">
-          <div class="modal__overlay" tabindex="-1">
-            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-4-title">
-              <header class="modal__header">
-                <p class="modal__title" id="id-modal-4-title">モニター時計</p>
-                <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
-              </header>
-              <main class="modal__content" id="id-modal-4-content">
-                <div class="modal__content-left">
-                  <div class="modal__description">
-                    <p>ショールームなどで製品に関する動画を背景に流しながら、時計を表示できるwebアプリを作成しました。</p>
+                    <p>自社のショールームで製品に関する動画を背景に流しながら、時計を表示できるwebアプリを作成しました。</p>
                     <p>HTML, CSS, JavaScriptのみで構築しており、インターネットやサーバー環境を必要とせず、file:のローカル環境で動作する仕様になっています。</p>
-                    <p>ローカル環境での動作を考慮して、フォントの読み込みも通常のCDNではなくセルフホスティングで対応しました。</p>
-                    <p>また、複数の動画ファイルをループ再生する機能については、当初はAjaxで動画の存在を確認する方法を検討しましたが、サーバーを利用しない仕様ではHTTP通信が使えないため、あらかじめ動画ファイルの数を定義してループ再生する仕組みに工夫しました。</p>
-                    <p class="modal__description-note">※練習用に作成したアプリで、公開はしておりません。</p>
+                    <p>ローカル環境での動作を考慮して、フォントの読み込みもCDNではなくセルフホスティングで対応しました。</p>
+                    <p>また、複数の動画ファイルをループ再生する機能については、当初はAjaxでサーバー内の動画を確認する方法を検討しましたが、サーバーを利用しない仕様ではHTTP通信が使えないため、あらかじめ動画の数を定義してループ再生する仕組みに工夫しました。</p>
                   </div>
                   <div class="modal__prog-lang">
                     <p class="modal__prog-lang-title">使用言語</p>
@@ -325,6 +174,165 @@ require_once '../config/const.php';
                   </div>
                   <div class="modal__service">
                     <a href="https://github.com/nakao-work/portfolio/tree/main/public/works/monitor_clock" class="modal__service-github" target="_blank">
+                      <img src="./assets/images/github-mark.png" class="modal__service-github-image">
+                      <p class="modal__service-github-title">GitHub</p>
+                    </a>
+                  </div>
+                </div>
+              </main>
+              <!-- <footer class="modal__footer">
+                <button class="modal__btn modal__btn-primary">Continue</button>
+                <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+              </footer> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="id-practice" class="section practice">
+      <h2 class="section__title">Practice</h2>
+      <p class="section__text">以下の作品は練習用に作成したものであり、公開はされておりません。</p>
+      <div class="practice__container">
+        <div class="practice__container-item" data-micromodal-trigger="id-modal-101" role="button">
+          <img src="./assets/images/practice_molstan.png" class="practice__container-image">
+          <p class="practice__container-title">molstan</p>
+          <p class="practice__container-subtitle">企業風ホームページ</p>
+        </div>
+        <div class="modal micromodal-slide" id="id-modal-101" aria-hidden="true">
+          <div class="modal__overlay" tabindex="-1">
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-101-title">
+              <header class="modal__header">
+                <p class="modal__title" id="id-modal-101-title">molstan</p>
+                <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+              </header>
+              <main class="modal__content" id="id-modal-101-content">
+                <div class="modal__content-left">
+                  <div class="modal__description">
+                    <p>Bootstrapのテンプレートを使用して、企業風のHPを作成しました。細かい見た目の部分を自分で調整し、企業のイメージやサービスの内容なども自分で考えてみました。</p>
+                    <p class="modal__description-note">※練習用に作成したサイトで、実在する企業ではありません。</p>
+                  </div>
+                  <div class="modal__prog-lang">
+                    <p class="modal__prog-lang-title">使用言語</p>
+                    <p class="modal__prog-lang-text">HTML/CSS, Bootstrap</p>
+                  </div>
+                </div>
+                <div class="modal__content-right">
+                  <div class="modal__link-container">
+                    <a class="modal__link" href="./practice/molestam/index.html" target="_blank">
+                      <span>サイトはこちら</span>
+                      <span class="material-symbols-rounded">open_in_new</span>
+                    </a>
+                  </div>
+                  <div class="modal__image-container">
+                    <a class="modal__image-inner" href="./practice/molestam/index.html" target="_blank">
+                      <img class="modal__image" src="./assets/images/practice_molstan.png">
+                    </a>
+                  </div>
+                  <div class="modal__service">
+                    <a href="https://github.com/nakao-work/portfolio/tree/main/public/practice/molestam" class="modal__service-github" target="_blank">
+                      <img src="./assets/images/github-mark.png" class="modal__service-github-image">
+                      <p class="modal__service-github-title">GitHub</p>
+                    </a>
+                  </div>
+                </div>
+              </main>
+              <!-- <footer class="modal__footer">
+                <button class="modal__btn modal__btn-primary">Continue</button>
+                <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+              </footer> -->
+            </div>
+          </div>
+        </div>
+        <div class="practice__container-item" data-micromodal-trigger="id-modal-102" role="button">
+          <img src="./assets/images/practice_orange.png" class="practice__container-image">
+          <p class="practice__container-title">orange</p>
+          <p class="practice__container-subtitle">美容室風ホームページ</p>
+        </div>
+        <div class="modal micromodal-slide" id="id-modal-102" aria-hidden="true">
+          <div class="modal__overlay" tabindex="-1">
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-102-title">
+              <header class="modal__header">
+                <p class="modal__title" id="id-modal-102-title">orange</p>
+                <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+              </header>
+              <main class="modal__content" id="id-modal-102-content">
+                <div class="modal__content-left">
+                  <div class="modal__description">
+                    <p>WordPressを使用して、美容室風のHPを作成しました。テーマを1から作成しました。納品後にお客様が編集・管理できるようなものになっていないので、今後アップデートしてく予定です。</p>
+                    <p class="modal__description-note">※練習用に作成したサイトで、実在する美容室ではありません。</p>
+                  </div>
+                  <div class="modal__prog-lang">
+                    <p class="modal__prog-lang-title">使用言語</p>
+                    <p class="modal__prog-lang-text">HTML/CSS, jQuery, WordPress</p>
+                  </div>
+                </div>
+                <div class="modal__content-right">
+                  <div class="modal__link-container">
+                    <a class="modal__link" href="./practice/orange/" target="_blank">
+                      <span>サイトはこちら</span>
+                      <span class="material-symbols-rounded">open_in_new</span>
+                    </a>
+                  </div>
+                  <div class="modal__image-container">
+                    <a class="modal__image-inner" href="./practice/orange/" target="_blank">
+                      <img class="modal__image" src="./assets/images/practice_orange.png">
+                    </a>
+                  </div>
+                  <div class="modal__service">
+                    <a href="https://github.com/nakao-work/portfolio/tree/main/public/practice/orange" class="modal__service-github" target="_blank">
+                      <img src="./assets/images/github-mark.png" class="modal__service-github-image">
+                      <p class="modal__service-github-title">GitHub</p>
+                    </a>
+                  </div>
+                </div>
+              </main>
+              <!-- <footer class="modal__footer">
+                <button class="modal__btn modal__btn-primary">Continue</button>
+                <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+              </footer> -->
+            </div>
+          </div>
+        </div>
+        <div class="practice__container-item" data-micromodal-trigger="id-modal-103" role="button">
+          <img src="./assets/images/practice_uploader.png" class="practice__container-image">
+          <p class="practice__container-title">File Uploader</p>
+          <p class="practice__container-subtitle">ファイルアップローダー</p>
+        </div>
+        <div class="modal micromodal-slide" id="id-modal-103" aria-hidden="true">
+          <div class="modal__overlay" tabindex="-1">
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-103-title">
+              <header class="modal__header">
+                <p class="modal__title" id="id-modal-103-title">File Uploader</p>
+                <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+              </header>
+              <main class="modal__content" id="id-modal-103-content">
+                <div class="modal__content-left">
+                  <div class="modal__description">
+                    <p>ファイル共有用のファイルアップローダーを作成しました。ギガファイル便のようにファイルをアップロードするとダウンロードリンクが発行されます。</p>
+                    <p>アップロード部分は勉強のためにライブラリは使わず、素のJavaScriptとphpで実装しました。</p>
+                    <p>セキュリティの部分に疎かったので、ファイルの保存場所やアクセス権限の設定、ファイル拡張子の制限など良い勉強になりました。</p>
+                    <p class="modal__description-note">※練習用に作成したサイトで、公開はしておりません。</p>
+                  </div>
+                  <div class="modal__prog-lang">
+                    <p class="modal__prog-lang-title">使用言語</p>
+                    <p class="modal__prog-lang-text">HTML/CSS, SCSS, JavaScript, particles.js, php, mysql</p>
+                  </div>
+                </div>
+                <div class="modal__content-right">
+                  <div class="modal__link-container">
+                    <a class="modal__link" href="./practice/uploader/" target="_blank">
+                      <span>サイトはこちら</span>
+                      <span class="material-symbols-rounded">open_in_new</span>
+                    </a>
+                  </div>
+                  <div class="modal__image-container">
+                    <a class="modal__image-inner" href="./practice/uploader/" target="_blank">
+                      <img class="modal__image" src="./assets/images/practice_uploader.png">
+                    </a>
+                  </div>
+                  <div class="modal__service">
+                    <a href="https://github.com/nakao-work/portfolio/tree/main/public/practice/uploader" class="modal__service-github" target="_blank">
                       <img src="./assets/images/github-mark.png" class="modal__service-github-image">
                       <p class="modal__service-github-title">GitHub</p>
                     </a>
