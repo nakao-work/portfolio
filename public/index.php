@@ -447,8 +447,8 @@ require_once '../config/const.php';
   <script src="./assets/js/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 
+  <!-- ハンバーガーメニュー -->
   <script>
-    /* ハンバーガーメニュー */
     document.addEventListener("DOMContentLoaded", () => {
       const btnHamburger = document.querySelector("#id-header__btn-hamburger");
       const hamburgerMenu = document.querySelector("#id-header__hamburger-nav");
@@ -491,8 +491,9 @@ require_once '../config/const.php';
       document.addEventListener("keydown", handleKeydown);
     });
   </script>
+
+  <!-- skill chart -->
   <script>
-    /* skill chart */
     const chartF = document.querySelector('#js-chart-frontend');
     const chartB = document.querySelector('#js-chart-backend');
     const chartO = document.querySelector('#js-chart-other');
@@ -509,7 +510,7 @@ require_once '../config/const.php';
       ],
       datasets: [{
         label: 'フロントエンド',
-        data: [3, 3, 2, 0, 1, 2],
+        data: [4, 4, 3, 0, 1, 2],
         fill: true,
         backgroundColor: 'rgba(237, 116, 159, 0.2)',
         borderColor: 'rgb(237, 116, 159)',
@@ -553,7 +554,7 @@ require_once '../config/const.php';
       ],
       datasets: [{
         label: 'バックエンド',
-        data: [3, 1, 3, 0, 2],
+        data: [4, 1, 3, 0, 3],
         fill: true,
         backgroundColor: 'rgba(79, 207, 160, 0.2)',
         borderColor: 'rgb(79, 207, 160)',
@@ -596,7 +597,7 @@ require_once '../config/const.php';
       ],
       datasets: [{
         label: 'その他',
-        data: [2, 1, 1, 1],
+        data: [2, 2, 2, 1],
         fill: true,
         backgroundColor: 'rgba(231, 231, 61, 0.2)',
         borderColor: 'rgb(231, 231, 61)',
@@ -628,8 +629,9 @@ require_once '../config/const.php';
       },
     });
   </script>  
+  
+  <!-- profileアニメーション -->
   <script>
-    /* profileアニメーション */
     const scrollTarget = document.querySelector('#id-profile');  //ターゲット要素を取得
     const waterDrop = document.querySelector('#id-water-drop');
     const dropShaped = document.querySelector('#id-drop-shaped');
@@ -664,8 +666,9 @@ require_once '../config/const.php';
       profileContainerInner.style.display = 'block'; // アニメーション終了後に表示する
     });
   </script>
+
+  <!-- Micromodal -->
   <script>
-    /* Micromodal */
     MicroModal.init({
       disableScroll: true, // モーダルが開いている間に、背景スクロールを無効にする。 
       disableFocus: true,
@@ -695,8 +698,9 @@ require_once '../config/const.php';
       });
     });
   </script>
+
+  <!-- お問い合わせ送信・reCAPTCHA -->
   <script>
-    /* お問い合わせ送信・reCAPTCHA */
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.querySelector('.modal-contact__form');
 
@@ -732,6 +736,8 @@ require_once '../config/const.php';
       });
     });
   </script>
+
+  <!-- SweetAlert2 -->
   <script>
     function contactComplete(status, message) {
       Swal.fire({
