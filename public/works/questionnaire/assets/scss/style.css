@@ -698,6 +698,11 @@ button {
   margin: 30px;
   filter: drop-shadow(2px 4px 4px #5e5e5e);
 }
+@media (max-width: 520px) {
+  .index-body .logo__image {
+    width: 20%;
+  }
+}
 .index-body .header-area {
   padding: 40px 0 20px;
   font-size: 1.8rem;
