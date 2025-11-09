@@ -1,0 +1,30 @@
+@charset "utf-8";
+/*----- 再利用可能なスタイルを定義する -----*/
+
+/* レスポンシブ */
+$breakpoints: (
+    sm: 320px,
+    md: 520px,
+    lg: 960px,
+    xl: 1200px
+);
+@mixin mq($breakpoint) {
+    @if type-of($breakpoint) == 'string' and map-has-key($breakpoints, $breakpoint) {
+        $breakpoint: map-get($breakpoints, $breakpoint);
+    }
+    
+    @if type-of($breakpoint) == 'number' {
+        @media (max-width: $breakpoint) {
+          @content;
+        }
+    } @else {
+        @warn "Unknown breakpoint: #{$breakpoint}. Please use a number (e.g. 600px) or one of: #{map-keys($breakpoints)}.";
+    }
+}
+// 使用例
+// @include mq(sm) {
+//     background-color: red;
+// }
+// @include mq(600px) {
+//     background-color: red;
+// }

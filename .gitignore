@@ -6,3 +6,4 @@ config/
 database/
 public/phpliteadmin.php
 public/practice/uploader/uploaded_file/
+public/works/questionnaire/uploaded_images/
