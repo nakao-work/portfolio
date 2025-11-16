@@ -30,6 +30,10 @@ require_once '../config/const.php';
   <!-- Micromodal -->
   <script src="https://cdn.jsdelivr.net/npm/micromodal@0.4.10/dist/micromodal.min.js"></script>
 
+  <!-- Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12.0.3/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12.0.3/swiper-bundle.min.css">
+
   <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.23.0/dist/sweetalert2.all.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.23.0/dist/sweetalert2.min.css" rel="stylesheet">
@@ -133,12 +137,12 @@ require_once '../config/const.php';
 
     <section id="id-works" class="section works">
       <h2 class="section__title">Works</h2>
-      <p class="section__text">これまでに制作した作品を紹介しています。</p>
+      <p class="section__text">これまでに業務で制作した作品を紹介しています。</p>
       <div class="works__container">
         <div class="works__container-item" data-micromodal-trigger="id-modal-1" role="button">
           <img src="./assets/images/works_monitor_clock.png" class="works__container-image">
-          <p class="works__container-title">モニター時計</p>
-          <p class="works__container-subtitle">展示用モニター時計</p>
+          <p class="works__container-title">時計サイネージ</p>
+          <p class="works__container-subtitle">ショールーム用サイネージ</p>
         </div>
         <div class="modal micromodal-slide" id="id-modal-1" aria-hidden="true">
           <div class="modal__overlay" tabindex="-1">
@@ -150,10 +154,9 @@ require_once '../config/const.php';
               <main class="modal__content" id="id-modal-1-content">
                 <div class="modal__content-left">
                   <div class="modal__description">
-                    <p>自社のショールームで製品に関する動画を背景に流しながら、時計を表示できるwebアプリを作成しました。</p>
-                    <p>HTML, CSS, JavaScriptのみで構築しており、インターネットやサーバー環境を必要とせず、file:のローカル環境で動作する仕様になっています。</p>
-                    <p>ローカル環境での動作を考慮して、フォントの読み込みもCDNではなくセルフホスティングで対応しました。</p>
-                    <p>また、複数の動画ファイルをループ再生する機能については、当初はAjaxでサーバー内の動画を確認する方法を検討しましたが、サーバーを利用しない仕様ではHTTP通信が使えないため、あらかじめ動画の数を定義してループ再生する仕組みに工夫しました。</p>
+                    <p>自社のショールームで製品に関する動画を背景に流しながら、時計を表示できるwebアプリを作成しました。ブラウザを全画面表示にしてデジタルサイネージとして使用します。</p>
+                    <p>HTML, CSS, JavaScriptのみで構築しており、インターネットやサーバー環境を必要とせず、file:のローカル環境でも動作する仕様になっています。</p>
+                    <p>複数の動画ファイルをループ再生する機能については、当初はAjaxでサーバー内の動画を確認する方法を検討しましたが、サーバーを利用しない仕様ではHTTP通信が使えないため、あらかじめ動画の数を定義してループ再生する仕組みに工夫しました。</p>
                   </div>
                   <div class="modal__prog-lang">
                     <p class="modal__prog-lang-title">使用言語</p>
@@ -187,12 +190,90 @@ require_once '../config/const.php';
             </div>
           </div>
         </div>
+
+        <div class="works__container-item" data-micromodal-trigger="id-modal-2" role="button">
+          <img src="./assets/images/works_questionnaire.png" class="works__container-image">
+          <p class="works__container-title">アンケート</p>
+          <p class="works__container-subtitle">展示会用アンケート</p>
+        </div>
+        <div class="modal micromodal-slide" id="id-modal-2" aria-hidden="true">
+          <div class="modal__overlay" tabindex="-1">
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-2-title">
+              <header class="modal__header">
+                <p class="modal__title" id="id-modal-2-title">アンケート</p>
+                <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+              </header>
+              <main class="modal__content" id="id-modal-2-content">
+                <div class="modal__content-left">
+                  <div class="modal__description">
+                    <p>展示会で自社ブースを訪れた方向けのアンケートシステムを開発しました。</p>
+                    <p>名刺情報をデジタルで管理できるよう、アンケート画面上で名刺を撮影・画像として保存できる機能を実装しています。</p>
+                    <p>管理画面では回答内容を一覧で確認でき、複数の展示会を一元的に管理できる仕組みになっています。</p>
+                  </div>
+                  <div class="modal__prog-lang">
+                    <p class="modal__prog-lang-title">使用言語</p>
+                    <p class="modal__prog-lang-text">HTML/CSS, SCSS, JavaScript, php, mysql</p>
+                  </div>
+                </div>
+                <div class="modal__content-right">
+                  <div class="modal__link-container">
+                    <a class="modal__link c-mr-10" href="./works/questionnaire/" target="_blank">
+                      <span>サイトはこちら</span>
+                      <span class="material-symbols-rounded">open_in_new</span>
+                    </a>
+                    <a class="modal__link" href="./works/questionnaire/admin.php" target="_blank">
+                      <span>管理画面はこちら</span>
+                      <span class="material-symbols-rounded">open_in_new</span>
+                    </a>
+                  </div>
+                  <!-- <div class="modal__image-container">
+                    <a class="modal__image-inner" href="./works/questionnaire/" target="_blank">
+                      <img class="modal__image" src="./assets/images/works_questionnaire.png">
+                    </a>
+                  </div> -->
+                  <div class="modal__image-container">
+                    <div class="swiper swiper__questionnaire">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <a class="modal__image-inner" href="./works/questionnaire/" target="_blank">
+                            <img class="modal__image" src="./assets/images/works_questionnaire.png">
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a class="modal__image-inner" href="./works/questionnaire/admin.php" target="_blank">
+                            <img class="modal__image" src="./assets/images/works_questionnaire_admin.png">
+                          </a>
+                        </div>
+                      </div>
+
+                      <!-- ナビボタン -->
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                      <!-- ページネーションの要素 -->
+                      <div class="swiper-pagination"></div>
+                    </div>
+                  </div>
+                  <div class="modal__service">
+                    <a href="https://github.com/nakao-work/portfolio/tree/main/public/works/questionnaire" class="modal__service-github" target="_blank">
+                      <img src="./assets/images/github-mark.png" class="modal__service-github-image">
+                      <p class="modal__service-github-title">GitHub</p>
+                    </a>
+                  </div>
+                </div>
+              </main>
+              <!-- <footer class="modal__footer">
+                <button class="modal__btn modal__btn-primary">Continue</button>
+                <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+              </footer> -->
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="id-practice" class="section practice">
       <h2 class="section__title">Practice</h2>
-      <p class="section__text">以下の作品は練習用に作成したものであり、公開はされておりません。</p>
+      <p class="section__text">以下の作品は練習用に作成したものであり、正式なサービスではありません。</p>
       <div class="practice__container">
         <div class="practice__container-item" data-micromodal-trigger="id-modal-101" role="button">
           <img src="./assets/images/practice_molstan.png" class="practice__container-image">
@@ -316,7 +397,7 @@ require_once '../config/const.php';
                   </div>
                   <div class="modal__prog-lang">
                     <p class="modal__prog-lang-title">使用言語</p>
-                    <p class="modal__prog-lang-text">HTML/CSS, SCSS, JavaScript, particles.js, php, mysql</p>
+                    <p class="modal__prog-lang-text">HTML/CSS, SCSS, JavaScript, php, mysql</p>
                   </div>
                 </div>
                 <div class="modal__content-right">
@@ -664,6 +745,21 @@ require_once '../config/const.php';
     ripple3.addEventListener('animationend', () => {
       waterDrop.style.display = 'none'; // アニメーション終了後に非表示にする
       profileContainerInner.style.display = 'block'; // アニメーション終了後に表示する
+    });
+  </script>
+
+  <!-- Swiper -->
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination', // ページネーションの要素
+        clickable: true,          // ドットをクリック可能にする
+      },
     });
   </script>
 

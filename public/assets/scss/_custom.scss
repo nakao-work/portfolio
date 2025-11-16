@@ -269,6 +269,7 @@ html {
 
   &__content-right {
     flex: 1;
+    overflow: hidden;
   }
   &__link-container {
     margin-bottom: 10px;
@@ -590,14 +591,19 @@ html {
   .works {
     &__container {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       flex-wrap: wrap;
       row-gap: 1vw;
+      column-gap: 5%;
       width: 80%;
       margin: 0 auto;
 
+      @include mq(lg) {
+        column-gap: 4%;
+      }
       @include mq(sm) {
         row-gap: 5vw;
+        column-gap: 0;
       }
     }
     &__container-item {
@@ -634,14 +640,19 @@ html {
 
     &__container {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       flex-wrap: wrap;
       row-gap: 1vw;
+      column-gap: 5%;
       width: 80%;
       margin: 0 auto;
 
+      @include mq(lg) {
+        column-gap: 4%;
+      }
       @include mq(sm) {
         row-gap: 5vw;
+        column-gap: 0;
       }
     }
     &__container-item {
