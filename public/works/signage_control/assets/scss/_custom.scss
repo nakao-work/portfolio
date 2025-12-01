@@ -1,0 +1,308 @@
+@charset "utf-8";
+
+@use "settings" as *;
+@use "mixins" as *;
+@use "common" as *;
+/*----- 各要素のスタイルは全てここで定義する -----*/
+
+
+
+/* 共通要素　始まり
+ * ========================================================================== */
+
+header {
+  padding: 10px;
+  background-color: $color-gray;
+  .img-logo {
+    height: 40px;
+  }
+}
+
+/* ==========================================================================
+ * 共通要素　終わり */
+
+
+
+
+
+/* index.php　始まり
+ * ========================================================================== */
+
+.index-body {
+
+  .wrapper {
+    width: 100%;
+  }
+
+  .item-container {
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    row-gap: 4vw;
+    width: 64%;
+    margin: 0 auto;
+
+    &__item {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30vw;
+      height: calc(30vw * 9/16);
+      border: 2px solid $color-accent;
+      border-radius: 5px;
+    }
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border: none;
+      transform: scale(1);
+      transform-origin: 0 0; /* 拡大縮小の基準を左上に設定 */
+      pointer-events: none;
+    }
+    .material-symbols-outlined {
+      color: $color-accent;
+      font-size: 5.0rem;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      height: 100%;
+    }
+    .overlay:hover {
+      background-color: rgba(42, 177, 218, 0.32);
+      cursor: pointer;
+    }
+  }
+}
+
+/* ==========================================================================
+ * index.php　終わり */
+
+
+
+
+
+/* editor.php　始まり
+ * ========================================================================== */
+
+.editor-body {
+  .wrapper {
+    background-color: $color-light-gray;
+  }
+  .form {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 30px;
+  }
+  .title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    &__title {
+      width: 500px;
+      border: none;
+      background-color: inherit;
+      font-size: 2.4rem;
+      border-bottom: 1px solid #D7DDE4;
+    }
+  }
+  .btn-container {
+    &__secondary {
+      padding: 6px 15px;
+      border: 1px solid $color-text-black;
+      border-radius: 19px;
+      background-color: inherit;
+      &:hover {
+        color: #fff;
+        background-color: $color-text-black;
+      }
+    }
+    &__primary {
+      padding: 7px 15px;
+      border: 1px solid $color-accent;
+      border-radius: 20px;
+      color: $color-accent;
+      &:hover {
+        color: #fff;
+        background-color: $color-accent;
+      }
+    }
+  }
+  .editor-container {
+    display: flex;
+    justify-content: flex-start;
+
+    &__left, &__right {
+      width: 50%;
+    }
+    &__left-name, &__right-name {
+      font-size: 2.0rem;
+    }
+    &__left-color-label, &__right-color-label {
+      margin-left: 10px;
+      font-size: 1.6rem;
+    }
+    &__left-color, &__right-color {
+      height: 25px;
+      margin-left: 5px;
+    }
+    .cke_1, .cke_2 {
+      margin-top: 5px;
+    }
+  }
+
+}
+
+/* ==========================================================================
+ * editor.php　終わり */
+
+
+
+
+
+/* preview.php　始まり
+ * ========================================================================== */
+
+.preview-body {
+
+  .btn-back {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: #b0a090;
+    font-size: 1.4rem;
+
+
+  }
+
+  .wrapper {
+    display: flex;
+    width: 100%;
+    height: 100dvh;
+    overflow: hidden;
+  }
+  .left-container {
+    position: relative;
+    width: 50%;
+    height: 100dvh;
+
+    &__content {
+      position: absolute;          /* 位置指定 */
+      top: 50%;                    /* 親要素の半分下にずらす */
+      left: 50%;                   /* 親要素の半分右にずらす */
+      transform: translateY(-50%) translateX(-50%);    /* 要素自体の半分、上と左にずらす */
+      width: 100%;
+    }
+  }
+  .right-container {
+    position: relative;
+    width: 50%;
+
+    &__content {
+      position: absolute;          /* 位置指定 */
+      top: 50%;                    /* 親要素の半分下にずらす */
+      left: 50%;                   /* 親要素の半分右にずらす */
+      transform: translateY(-50%) translateX(-50%);    /* 要素自体の半分、上と左にずらす */
+      width: 100%;
+    }
+  }
+  img, video {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+}
+
+/* ==========================================================================
+ * preview.php　終わり */
+
+
+
+
+
+/* signage.php　始まり
+ * ========================================================================== */
+
+.signage-body {
+
+  .wrapper {
+    display: flex;
+    width: 100%;
+    height: 100dvh;
+    overflow: hidden;
+  }
+  .left-container {
+    position: relative;
+    width: 50%;
+    height: 100dvh;
+
+    &__content {
+      position: absolute;          /* 位置指定 */
+      top: 50%;                    /* 親要素の半分下にずらす */
+      left: 50%;                   /* 親要素の半分右にずらす */
+      transform: translateY(-50%) translateX(-50%);    /* 要素自体の半分、上と左にずらす */
+      width: 100%;
+    }
+  }
+  .right-container {
+    position: relative;
+    width: 50%;
+
+    &__content {
+      position: absolute;          /* 位置指定 */
+      top: 50%;                    /* 親要素の半分下にずらす */
+      left: 50%;                   /* 親要素の半分右にずらす */
+      transform: translateY(-50%) translateX(-50%);    /* 要素自体の半分、上と左にずらす */
+      width: 100%;
+    }
+  }
+  img, video {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+}
+
+/* ==========================================================================
+ * signage.php　終わり */
+
+
+
+/* XXXX.xxxx　始まり
+ * ========================================================================== */
+
+/* ==========================================================================
+ * XXXX.xxxx　終わり */
+
+
+
+/* XXXX.xxxx　始まり
+ * ========================================================================== */
+
+/* ==========================================================================
+ * XXXX.xxxx　終わり */

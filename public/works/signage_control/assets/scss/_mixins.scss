@@ -1,0 +1,23 @@
+@charset "utf-8";
+/*----- 再利用可能なスタイルを定義する -----*/
+
+/* レスポンシブ */
+$breakpoints: (
+    sm: 400px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+);
+@mixin mq($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    } @else {
+        @warn "Unknown breakpoint: #{$breakpoint}. Please use one of: #{map-keys($breakpoints)}.";
+    }
+}
+// 使用例
+// @include mq(sm) {
+//     background-color: red;
+// }

@@ -139,6 +139,7 @@ require_once '../config/const.php';
       <h2 class="section__title">Works</h2>
       <p class="section__text">これまでに業務で制作した作品を紹介しています。</p>
       <div class="works__container">
+        <!-- works-1 -->
         <div class="works__container-item" data-micromodal-trigger="id-modal-1" role="button">
           <img src="./assets/images/works_monitor_clock.png" class="works__container-image">
           <p class="works__container-title">時計サイネージ</p>
@@ -191,6 +192,7 @@ require_once '../config/const.php';
           </div>
         </div>
 
+        <!-- works-2 -->
         <div class="works__container-item" data-micromodal-trigger="id-modal-2" role="button">
           <img src="./assets/images/works_questionnaire.png" class="works__container-image">
           <p class="works__container-title">アンケート</p>
@@ -268,6 +270,92 @@ require_once '../config/const.php';
             </div>
           </div>
         </div>
+
+        <!-- works-3 -->
+        <div class="works__container-item" data-micromodal-trigger="id-modal-3" role="button">
+          <img src="./assets/images/works_signage_control_1.webp" class="works__container-image">
+          <p class="works__container-title">SignageControl</p>
+          <p class="works__container-subtitle">カスタムサイネージ</p>
+        </div>
+        <div class="modal micromodal-slide" id="id-modal-3" aria-hidden="true">
+          <div class="modal__overlay" tabindex="-1">
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-3-title">
+              <header class="modal__header">
+                <p class="modal__title" id="id-modal-3-title">SignageControl</p>
+                <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+              </header>
+              <main class="modal__content" id="id-modal-3-content">
+                <div class="modal__content-left">
+                  <div class="modal__description">
+                    <p>本アプリは、Webブラウザ上で動作するデジタルサイネージシステムです。</p>
+                    <p>横2分割レイアウトを採用し、左右のエリアそれぞれの表示内容を CKEditor によって自由に編集できます。画像や動画も KCFinder との連携により簡単にアップロード可能で、直感的な操作でコンテンツを構築できます。</p>
+                    <p>作成したサイネージは最大4種類まで保存ができ、用途やシーンに合わせて柔軟に切り替え可能です。ブラウザの全画面表示を前提とした設計により、専用機器を必要とせず、PC・タブレットを使って手軽にサイネージ環境を構築できます。</p>
+                  </div>
+                  <div class="modal__prog-lang">
+                    <p class="modal__prog-lang-title">使用言語</p>
+                    <p class="modal__prog-lang-text">HTML/CSS, SCSS, JavaScript, php, mysql</p>
+                  </div>
+                </div>
+                <div class="modal__content-right">
+                  <div class="modal__link-container">
+                    <a class="modal__link" href="./works/signage_control/" target="_blank">
+                      <span>サイトはこちら</span>
+                      <span class="material-symbols-rounded">open_in_new</span>
+                    </a>
+                  </div>
+                  <!-- <div class="modal__image-container">
+                    <a class="modal__image-inner" href="./works/questionnaire/" target="_blank">
+                      <img class="modal__image" src="./assets/images/works_questionnaire.png">
+                    </a>
+                  </div> -->
+                  <div class="modal__image-container">
+                    <div class="swiper swiper__questionnaire">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <a class="modal__image-inner" href="./works/signage_control/" target="_blank">
+                            <img class="modal__image" src="./assets/images/works_signage_control_1.webp">
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a class="modal__image-inner" href="./works/signage_control/" target="_blank">
+                            <img class="modal__image" src="./assets/images/works_signage_control_2.webp">
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a class="modal__image-inner" href="./works/signage_control/" target="_blank">
+                            <img class="modal__image" src="./assets/images/works_signage_control_3.webp">
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a class="modal__image-inner" href="./works/signage_control/" target="_blank">
+                            <img class="modal__image" src="./assets/images/works_signage_control_4.webp">
+                          </a>
+                        </div>
+                      </div>
+
+                      <!-- ナビボタン -->
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                      <!-- ページネーションの要素 -->
+                      <div class="swiper-pagination"></div>
+                    </div>
+                  </div>
+                  <div class="modal__service">
+                    <a href="https://github.com/nakao-work/portfolio/tree/main/public/works/signage_control" class="modal__service-github" target="_blank">
+                      <img src="./assets/images/github-mark.png" class="modal__service-github-image">
+                      <p class="modal__service-github-title">GitHub</p>
+                    </a>
+                  </div>
+                </div>
+              </main>
+              <!-- <footer class="modal__footer">
+                <button class="modal__btn modal__btn-primary">Continue</button>
+                <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+              </footer> -->
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
